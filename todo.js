@@ -12,7 +12,7 @@ function render() {
 
         var linkElement = document.createElement('a');
         linkElement.setAttribute('href', '#');
-        linkElement.setAttribute('onclick', 'exclude('+tasks.indexOf(task)+')');
+        linkElement.setAttribute('onclick', 'remove('+tasks.indexOf(task)+')');
         
         var linkText = document.createTextNode(' Excluir');
         linkElement.appendChild(linkText);
@@ -34,7 +34,7 @@ function add(){
 
 buttonElement.onclick = add;
 
-function exclude(taskPosition) {
+function remove(taskPosition) {
     tasks.splice(taskPosition, 1);
     render();
     saveToStorage();
